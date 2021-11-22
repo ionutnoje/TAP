@@ -1,0 +1,43 @@
+paradigme de programaer
+
+1. structurata
+2.procedurala/imperativa
+3.modulara
+4.functionala
+5.logica
+6.P00
+7.generica
+
+
+POO: -obiect componenta de baza 
+     -instantiere obiect din clasa
+
+    Obiect: -atribute
+            -campuri
+            -proprietati 
+
+    Caracteristici POO: -ascunderea sau incapsularea datelor(setarea vizibilitatii)
+                        -polimorfism
+                        -mostenirea      
+                        -datele sunt incapsulate in obiect, nu avem acces la ele, adica ele sunt private
+                        -la date avem acces doar prin getter si setter 
+
+    Polimorfism:-apare doar in cazul mostenirii 
+                -am mostenit clasele de baza in clase copil
+                
+                
+                ex: functie (Baza param)
+                    apel functie (obiect baza )
+                    apel functie (obiect derivat)
+
+    Suprascriere: doar la mostenire
+
+    Supraincarcarea: apare fara mostenire de clase
+                     sqrt(double, double)
+                     sqrt(double, float)
+                     sqrt(int, int)
+
+
+Tipuri abstracte si programare generica 
+
+
