@@ -1,0 +1,47 @@
+                                Curs 2 - Clase
+
+
+1. declarare .h, .hpp;
+2. definire metode .cpp;
+
+    avem 3 modificatori de acces: private: accesibil din clasa
+                                    protected accesibil din clasele copil prin mostenire
+                                    public accesibile peste tot
+
+    class numeclasa
+    {
+        private : 
+            campuri
+            int a;
+            float b;
+
+        public : 
+            tip metoda1(param); // aici se scrie numa prototipul metodei
+            void metoda2(param);
+
+    };
+    //se pune ; obligatoriu dupa clasa    
+
+exemplu de clasa: 
+
+    #pragma once //includere o singura data C++
+    #ifndef_Clasa_
+    #define_Clasa_
+    Class clasa{
+
+    };
+    #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
