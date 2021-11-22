@@ -5,7 +5,7 @@ paradigme de programaer
 3.modulara
 4.functionala
 5.logica
-6.P00
+6.POO
 7.generica
 
 
@@ -53,6 +53,238 @@ Programarea generica
 Programarea generica cu clase sablon C07
 
 Java: Object
+
+Visual studio - exemple VS2013
+QT: GUI Proiect
+CodeBlocks
+
+Clasa.cpp -> Clasa.h
+Main.cpp -> Main.h
+
+
+        -tipul bool poate sa aiba 2 valori: false(0) si true(1)
+        
+
+Alocare dinamica:
+
+in C: alocare: malloc, calloc, realoc
+        -dealocare: free 
+        -int *v = (int*)malloc(n * sizeof(int));
+        -free v;
+
+
+int C++: alocare: new
+        -dealocare: delete
+        -int &v = new int[j];
+        -delete[] v;  -> elibereaza toate elementele 
+        -delete v;  -> INCORECT pentru ca elibereaza numai pointerul
+
+
+declarare dinamica de matrice in c++
+
+        int ** a = new int *[n];
+        for(int i =0; i < n; i++)
+        {
+                a[i]= new int [m];
+        }
+        for (int i = 0; i < n; i++)
+        {
+                delete[] a[i];   //elibereaza linia respectiva
+        }
+        delete[] a; //elibereaza vectorul de pointeri(practic prima coloana)
+
+
+
+cin, cout: fluxuri de date standard
+        cin si cout se numesc obiecte, si fac parte din std 
+        sunt elemente de tip flux 
+        sunt de tip static
+
+
+includurile standard din c++ nu se termina cu .h, dar daca vrem sa folosim math.h o sa scriem <cmath> sau la stdlib.h 
+o sa folosim <cstdlib>
+
+
+
+spatii de nume : using namespace std;
+
+        ex: namespace A{ (declarare de clasa)
+                class Cl
+                {
+                        
+                }; //se pune ; dupa } de la clasa
+
+        }
+
+        namespace B{
+
+                class Cl{ };
+                Cl obiect;
+                A::Cl obiect 2;
+
+        }
+
+        namespace B{
+                using namespace A;
+                class Cl{...};
+                Cl obiect 3;
+        }; //eroare? ambiguitate
+
+
+
+Referinta: 
+        -Tipul referinta sta in loc de pointer(dar nu se aplica la alocare de memorie la matrici etc)
+                ci este folosit la apeluri de functii 
+                ex(in java): Clasa c = new Clasa();
+                                   c este referinta la clasa 
+
+
+tip & varref = var;
+int i = 10;
+int & refi = i;
+
+++refi;//crestem prin referinta contorul 
+
+cout << refi << i;
+        11      11
+
+i = 100
+
+cout << refi << i;
+        100    100
+
+
+        avem o variabila cu o val iar referinta este un strat exterior care are acces direct atat la val cat si la adresa
+        nu mai trebuie sa trecem steluta de la pointeri in fata, nu mai e nevoie la referinta 
+
+                *adri este i 
+                iar refi este tot i
+
+
+
+exemplu de referinta la interschimbare de val intre 2 variabile
+
+
+
+/////////////////////////////////////////////////////////
+
+int main()
+{
+        int a = 100, b = 200;
+        
+        interschimbare1(a,b);
+
+        a ramane 100 iar b ramane 200 pentru ca nu am folosit pointeri
+
+        interschimbare2(a,b);//o sa functioneze si e varianta cu pointeri
+
+        interschimbare3(a,b);//o sa functioneze si e varianta cu referinta
+
+
+}
+
+void interschimbare1(int x, int y)
+{
+        int tmp = x;
+        x = y;
+        y = tmp;
+
+
+        int functie se schimba dar pentru ca nu folosim pointeri nu se transmit valorile schimbate la variabile
+
+}
+
+
+void interschimbare2(int *adra, int * adrb)
+{
+        int tmp = *adra;
+        *adra = *adrb;
+        *adrb = tmp;
+}
+
+interschimbare3(int &ra, int &rb) prin apel val variabilei a se transmite in referinta refa 
+{
+        int tmp = ra;
+        ra = rb;
+        rb = tmp;
+}
+
+
+
+/////////////////////////////////////////////////////////
+
+
+
+
+ex2 la referinte: 
+
+int main()
+{
+
+}
+
+int& max(int a, int b)
+{
+        //in acest caz declaram o referinta &m care o sa fie egala cu max(a,b)
+
+        int &m = max(a,b);
+
+        practic nu se mai ia memorie pentru inca o variabila in care sa se stocheze max
+        ci m o sa fie o referinta catre val maxima dintre cele 2 numere
+
+        practic revenim cu acelasi obiect,cal max, deci nu se foloseste memorie in plus
+
+        m este o alta denumire pentru var a, practic referinta
+
+
+}
+
+
+
+
+int max(int a, int b)
+{
+        //in acest caz se verifica maximul si se creaza o variabila locala in care stocam max
+
+        int a = 100;
+        int b = 200;
+
+
+        int m = max(a,b); variabila in care intra val max
+
+
+}
+
+
+
+
+Referinta constanta: const int &r = a; //corect
+                        
+                        
+                        const int &r;//gresit
+                        r = a;       //gresit
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
