@@ -269,8 +269,61 @@ Referinta constanta: const int &r = a; //corect
  
 
 
+Functii cu parametrii impliciti
+
+        in cazul in care dorim sa calculam perimetrul unui patrulater
+
+        avem un aptrulater a, b,c,d 
+
+double P(double a, double b, double c, double d)
+{
+        return a+b+c+d;
+}      
+
+daca vrem nr diferit de argumente
 
 
+double P(double a, double b, double c, double d = 0)
+{
+        return a+b+c+d;
+
+        //d are deja valoare deci este un parametru impliciti
+
+}  
+
+in main: apelam P(x,y,z);//merge pentru ca avem o valoare implicita la d
+         apelam P(x,y,z,t);//merge si a
+
+putem da valori implicite la toate argumentele functiei P ,si in acel caz poate sa fie apelata fara parametrii,cu un parametru, cu 2 parametrii sau 3 sau toti
+
+Gresit: double P(double a = -1; double b, double c, double d)
+                {
+
+                }
+
+        in main: P(?,y,z,t); nu merge pentru ca valoarea implicita este prima din functie
+                 P( ,y,z,t); asa ceva nu exista
+
+
+Exceptii: 
+
+trebuie noi sa declaram clasa cu exceptii
+
+class Exceptie{
+        void functie(){
+                if(conditie)
+                {
+                        Exceptie ex;
+                        throw ex;//instantiere de tip exceptie
+                }
+        }
+        try{
+                functie();
+        }
+        catch(Exceptie e ){
+                cout << "exceptie .....";
+        }
+}
 
 
 
