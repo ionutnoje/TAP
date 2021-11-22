@@ -50,7 +50,10 @@ Programarea generica
         iar in fisierul .cpp o sa punem implementarea, definirea metodelor
 
 
-        
+Programarea generica cu clase sablon C07
+
+Java: Object
+
 
 
 
