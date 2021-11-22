@@ -32,6 +32,84 @@ exemplu de clasa:
     };
     #endif
 
+    //daca nu se specifica modificator de acces atunci este pus pe private din start
+
+    //definirea metodelor
+        tipretur Clasa::metoda(parametrii)
+        {
+            //implementare
+        }
+
+
+
+
+
+Constructor: 
+    -trebuie sa aiba numele clasei;
+    -nu are tip de retur
+    -this este pointer la obiectul curent
+    -se foloseste-> in loc de . ca in java(this.nume = nume in java este this-> nume = nume in c++)
+
+    implementare de constructor pt clasa persoana in stil java:
+        Persoana::Persoana(string n, string p, int v)
+        {
+            this->nume = nume;
+            this->prenume = prenume;
+            this->varsta = varsta;
+
+        }
+
+
+    implementare de constructor pt clasa persoana in stil C++
+        Persoana::Persoana(string n, string p, int v):nume(n),prenume(p),varsta(v)      
+        {
+            //nu a fost nimic alocat cu new
+            //nume(n) este echivalent cu this->nume = n;
+
+
+        }
+
+
+
+Destructorul: 
+    
+    Clasa::~Clasa(){}
+
+
+    implementare de destructor pt clasa persoana in stil c++
+
+    Persoana::~Persoana()
+    {
+        (delete); sau fisier.close();
+    }
+
+
+    
+
+Instantiere de obiect:
+    -se trec in main
+    -exista 2 variante de instantiere
+    
+    //alocare statica? 
+    ex: Persoana p1("Poposcu","alin",20);
+        static int i(10);?
+        p1.getNume();  //p1 nu este pointer
+
+
+        //alocare dinamica
+    ex2: Persoana* p2 = new Persoana("ionescu","alina",10);    
+            //in acest caz la sfarsit trebuie dealocat cu delete p2;
+            cout << p2->getPrenume();// este pointer deci se foloseste ->
+
+
+
+
+
+
+
+
+
+
 
 
 
