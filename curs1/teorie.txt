@@ -41,3 +41,17 @@ POO: -obiect componenta de baza
 Tipuri abstracte si programare generica 
 
 
+
+PARTEA 2 CURS 1
+
+Programarea generica
+
+        avem fisiere header (.h), unde se face declararea clasei si prototipul functiilor, prototip adica fara implementare
+        iar in fisierul .cpp o sa punem implementarea, definirea metodelor
+
+
+        
+
+
+
+
