@@ -67,9 +67,11 @@ void Stack::push(int element)
     }
     else
     {
-         Stack_full exceptie;
-         throw exceptie;
+        Stack_full exceptie;
+        throw exceptie;
     }
+
+    
 
 
 
@@ -80,45 +82,50 @@ void Stack::pop()
 {
     if (isempty() != true)
     {
-        vector[top] == NULL;
+        
+        vector[top-1] == NULL;
         top--;
+
     }
     else
     {
         Stack_empty exceptie;
         throw exceptie;
     }
+   
 }
 
 
 int Stack::peek()
 {
-    if (isempty() == true)
+    if (isempty() != true)
+    {
+        return vector[top-1];
+    }
+    else
     {
         Stack_empty exceptie;
         throw exceptie;
     }
-    else
-    {
-        return vector[top];
-    }
+    
 }
 
 
 void Stack::print()
 {
-    if (isempty() == true)
+    if (isempty() != true)
+    {
+        for (int i = 0; i < top; i++)
+        {
+            cout << "vector[" << i << "]= " << vector[i] << endl;;
+        }
+    }
+    else
     {
         Stack_empty exceptie;
         throw exceptie;
     }
-    else
-    {
-        for (int i = 0; i < top; i++)
-        {
-            cout << "vector[" << i << "]= " << vector[i];
-        }
-    }
+    
 }
 
 
