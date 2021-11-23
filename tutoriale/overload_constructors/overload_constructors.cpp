@@ -9,6 +9,22 @@ class Human{
         string name;
 
 
+
+
+    // Persoana::Persoana(string n, string p, int v):nume(n),prenume(p),varsta(v)      
+    //     {
+    //         //nu a fost nimic alocat cu new
+    //         //nume(n) este echivalent cu this->nume = n;
+
+
+    //     }
+
+
+    
+
+
+
+
     public:
         Human()
         {
@@ -24,19 +40,25 @@ class Human{
             this->name = name;
         }
 
-        Human(int age)
+        Human(int age):age(age)
         {
             cout << "constructor with age as the parameter" << endl;
-            name = "noname";
-            this->age = age;
+            //name = "noname";
+            //this->age = age;
         }
 
-        Human(int age, string name)
+        // Human(int age, string name)//constructor de tip java
+        // {
+        //     cout << "constructor with age and name as the parameter" << endl;
+        //     this->age = age;
+        //     this->name = name;
+        // }
+
+        Human(int a, string n):age(a),name(n)//constructor de tip c++
         {
-            cout << "constructor with age and name as the parameter" << endl;
-            this->age = age;
-            this->name = name;
+            cout << "constructorul tip c++" << endl;
         }
+
 
         void display()
         {
