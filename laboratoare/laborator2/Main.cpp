@@ -1,12 +1,40 @@
 #include "Stack.h"
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    Stack stiva; //max = 100
-    Stack st(50);//campul max pentru obiectul st este 50
-    // stiva.push(1);
-    // stiva.push(2);
-    // stiva.push(3);//top = 3
-    // st.push(1000);
-    // st.push(2000);//top = 2
+    Stack st(12);//campul max pentru obiectul st este 50
+
+    try {
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        st.push(4);
+    }
+    catch(Stack::Stack_full exception){
+        cout << "stiva plina" << endl;
+    }
+
+    st.print();
+
+    try {
+        st.pop();
+    }
+    catch(Stack::Stack_empty exception)
+    {
+        cout << "stiva este goala" << endl;
+    }
+    
+    st.print();
+
+
+    
+
+
+
+
+    return 0;
+
 }
