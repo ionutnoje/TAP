@@ -116,14 +116,12 @@ int Queue::peak()
 {
     if(isfull() == true)
     {
-        return vector[max];
+        return vector[rear];
     }
     else if(isempty() == true)
     {
         cout << "coada este goala" << endl;
     }
-    else
-    {
-        return vector[front];
-    }
+    
+       
 }
