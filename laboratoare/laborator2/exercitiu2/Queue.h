@@ -11,8 +11,8 @@ class Queue
 
 
     public:
-        ~Queue();
         Queue(int max = 100);
+        ~Queue();
         Queue(const Queue& param);
         void enqueue(int);
         bool isfull();

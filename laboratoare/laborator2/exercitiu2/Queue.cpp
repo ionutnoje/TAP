@@ -6,7 +6,7 @@ using namespace std;
 Queue::Queue(int max): max(max)
 {
     this->front = 0;
-    this->rear = -1;
+    this->rear = 0;
     this->vector = new int[max];
 }
 
@@ -32,7 +32,7 @@ Queue::Queue(const Queue& param)
 
 bool Queue::isfull()
 {
-    if(front == max)
+    if(rear == max)
     {
         return true;
     }
@@ -42,7 +42,7 @@ bool Queue::isfull()
 
 bool Queue::isempty()
 {
-    if(rear == -1)
+    if(rear == 0)
     {
         return true;
     
@@ -54,8 +54,8 @@ void Queue::enqueue(int element)
 {
     if(isfull() != true)
     {
-        vector[front] = element;
-        front++;
+        vector[rear] = element;
+        rear++;
     }
     else
     {
@@ -67,8 +67,11 @@ void Queue::dequeue()
 {
     if(isempty() != true)
     {
-        vector[rear + 1] == NULL;
-        rear++;
+        for(int i = 0; i < rear - 1; i++)
+        {
+            vector[i] = vector[i + 1];
+        }
+        rear--;
     }
     else
     {
@@ -84,7 +87,7 @@ void Queue::print()
     }
     else
     {
-        for(int i = rear; i <= front; i++)
+        for(int i = 0; i <= rear; i++)
         {
             cout << "vector[" << i << "]= " << vector[i] << endl;
         }
@@ -96,11 +99,15 @@ int Queue::elements()
 {
     if(isempty() == true)
     {
-        cout << "coada are 0 elemente" << endl;
+        return 0;
     }
     else if(isfull() == true)
     {
-        cout << "coada are " << this->max << " elemente" << endl;
+       return max;
+    }
+    else
+    {
+        return front;
     }
 }
 
@@ -113,7 +120,7 @@ int Queue::peak()
     }
     else if(isempty() == true)
     {
-        cout << "nu sunt elemente in coada" << endl;
+        cout << "coada este goala" << endl;
     }
     else
     {
