@@ -103,7 +103,7 @@ int Queue::elements()
     }
     else if(isfull() == true)
     {
-       return max;
+       return front;
     }
     else
     {
