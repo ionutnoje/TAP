@@ -2,6 +2,8 @@
 #ifndef _FRACTIE_  //
 #define _FRACTIE_  
 
+
+
 class Fractie
 {
         public:
@@ -13,7 +15,7 @@ class Fractie
             void Scadere( Fractie& obiect1, Fractie& obiect2);
             int Inmultire( Fractie& obiect1, Fractie& obiect2);
             int Impartire( Fractie& obiect1, Fractie& obiect2);
-                int CMMDC(int a, int b);
+            
             int Simplifica();
             int reciproc();
             bool egal(const Fractie& obiect);
