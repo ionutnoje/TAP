@@ -131,6 +131,24 @@ void Fractie::Simplifica()
 }
 
 
+void Fractie::reciproc()
+{
+    int aux;
+
+    cout << "\nfractia initiala este: " << this->numarator << "/" << this->numitor << endl; 
+
+
+    aux = this->numarator;
+    this->numarator = this->numitor;
+    this->numitor = aux;
+
+
+    cout << "fractia dupa inversare este: " << this->numarator << "/" << this->numitor << endl; 
+
+
+}
+
+
 
 
 
