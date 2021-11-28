@@ -26,11 +26,11 @@ class Fractie
             Fractie(const Fractie& obiect);
             void Adunare( Fractie& obiect1, Fractie& obiect2);
             void Scadere( Fractie& obiect1, Fractie& obiect2);
-            int Inmultire( Fractie& obiect1, Fractie& obiect2);
-            int Impartire( Fractie& obiect1, Fractie& obiect2);
+            void Inmultire( Fractie& obiect1, Fractie& obiect2);
+            void Impartire( Fractie& obiect1, Fractie& obiect2);
             
-            int Simplifica();
-            int reciproc();
+            void Simplifica();
+            void reciproc();
             bool egal(const Fractie& obiect);
             void print();
 

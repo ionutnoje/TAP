@@ -104,6 +104,10 @@ void Fractie::print()
 }
 
 
+Fractie::Simplificare()
+{
+    
+}
 
 
 
