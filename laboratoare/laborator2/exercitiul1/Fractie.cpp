@@ -27,32 +27,32 @@ Fractie::Fractie(const Fractie& obiect)
     this->numitor = obiect.numitor;
     
 }
-void Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
+void Fractie::Adunare(Fractie& obiect2)
 {
     int numitor_final;
     int numarator_final;
 
 
-    if(obiect1.numitor == obiect2.numitor)
+    if(this->numitor == obiect2.numitor)
     {
-        numitor_final = obiect1.numitor;
-        numarator_final = obiect1.numarator + obiect2.numarator;
+        numitor_final = this->numitor;
+        numarator_final = this->numarator + obiect2.numarator;
 
         cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
         
     }
     else
     {
-        int aux = obiect1.numitor;
-        obiect1.numarator = obiect1.numarator * obiect2.numitor;
-        obiect1.numitor = obiect1.numitor * obiect2.numitor;
+        int aux = this->numitor;
+        this->numarator = this->numarator * obiect2.numitor;
+        this->numitor = this->numitor * obiect2.numitor;
 
         obiect2.numarator = obiect2.numarator * aux;
         obiect2.numitor = obiect2.numitor * aux;
 
 
         numitor_final = obiect2.numitor;
-        numarator_final = obiect1.numarator + obiect2.numarator;
+        numarator_final = this->numarator + obiect2.numarator;
 
         cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
         
@@ -63,32 +63,32 @@ void Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
 
 
 
-void Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
+void Fractie::Scadere(Fractie& obiect2)
 {
     int numitor_final;
     int numarator_final;
 
 
-    if(obiect1.numitor == obiect2.numitor)
+    if(this->numitor == obiect2.numitor)
     {
-        numitor_final = obiect1.numitor;
-        numarator_final = obiect1.numarator - obiect2.numarator;
+        numitor_final = this->numitor;
+        numarator_final = this->numarator - obiect2.numarator;
 
         cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final  << endl;
         
     }
     else
     {
-        int aux = obiect1.numitor;
-        obiect1.numarator = obiect1.numarator * obiect2.numitor;
-        obiect1.numitor = obiect1.numitor * obiect2.numitor;
+        int aux = this->numitor;
+        this->numarator = this->numarator * obiect2.numitor;
+        this->numitor = this->numitor * obiect2.numitor;
 
         obiect2.numarator = obiect2.numarator * aux;
         obiect2.numitor = obiect2.numitor * aux;
 
 
         numitor_final = obiect2.numitor;
-        numarator_final = obiect1.numarator - obiect2.numarator;
+        numarator_final = this->numarator - obiect2.numarator;
 
         cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << endl;
         
