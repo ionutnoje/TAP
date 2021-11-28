@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 
-    Fractie fractie1(3,0);
+    Fractie fractie1(3,1);
     Fractie fractie2(4,3);
 
 
