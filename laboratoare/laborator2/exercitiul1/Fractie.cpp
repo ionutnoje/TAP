@@ -27,8 +27,7 @@ Fractie::Fractie(const Fractie& obiect)
     this->numitor = obiect.numitor;
     
 }
-
-int Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
+void Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
 {
     int numitor_final;
     int numarator_final;
@@ -39,7 +38,7 @@ int Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
         numitor_final = obiect1.numitor;
         numarator_final = obiect1.numarator + obiect2.numarator;
 
-        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << " = " << numarator_final/numitor_final;
+        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
         
     }
     else
@@ -55,7 +54,7 @@ int Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
         numitor_final = obiect2.numitor;
         numarator_final = obiect1.numarator + obiect2.numarator;
 
-        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << " = " << numarator_final/numitor_final;
+        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
         
 
 
@@ -64,7 +63,7 @@ int Fractie::Adunare(Fractie& obiect1,Fractie& obiect2)
 
 
 
-int Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
+void Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
 {
     int numitor_final;
     int numarator_final;
@@ -102,6 +101,20 @@ int Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
 void Fractie::print()
 {
     cout << "numaratorul este: " << this->numarator << " iar numitorul este: " << this->numitor << endl;
+}
+
+
+int Fractie::CMMDC(int a, int b)
+{
+    while(a!=b)
+    {
+        if(a>b)
+            a=a-b;
+        else
+            b=b-a;
+    }
+    
+    return a;
 }
 
 

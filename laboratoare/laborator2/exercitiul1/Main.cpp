@@ -18,7 +18,6 @@ int main()
     cout << endl;
     fractie2.Scadere(fractie1,fractie2);
     
-    cout << "CMMDC a celor doua numere este: " << fractie1.CMMDC(29,12);
     
     
 
