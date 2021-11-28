@@ -114,7 +114,7 @@ void Fractie::Simplifica()
     }
     else 
     {   
-        if(this->numarator/this->numitor == 0)
+        if(this->numarator % this->numitor == 0)
         {
             cout << "fractia nu se poate simplifica, iar rezultatul este: " << this->numarator/this->numitor << endl;
         }
