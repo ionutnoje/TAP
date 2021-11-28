@@ -104,9 +104,30 @@ void Fractie::print()
 }
 
 
-Fractie::Simplificare()
+void Fractie::Simplifica()
 {
-    
+    int cmmdc = CMMDC(this->numarator,this->numitor);
+
+    if(this->numarator == this->numitor)
+    {
+        cout << "rezultatul simplificarii este 1" << endl;
+    }
+    else 
+    {   
+        if(this->numarator/this->numitor == 0)
+        {
+            cout << "fractia nu se poate simplifica, iar rezultatul este: " << this->numarator/this->numitor << endl;
+        }
+        else
+        {
+            this->numarator = this->numarator/cmmdc;
+            this->numitor = this->numitor/cmmdc;
+            cout << "fractia simplificata este: " << this->numarator << "/" << this->numitor << endl;
+        
+        }
+
+    }
+
 }
 
 

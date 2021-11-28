@@ -8,7 +8,7 @@ int main()
 {
 
     Fractie fractie1(3,4);
-    Fractie fractie2(3,5);
+    Fractie fractie2(20,32);
     cout << "fractie1: " << endl; 
     fractie1.print();    
     cout << "fractie2: " << endl;
@@ -21,6 +21,7 @@ int main()
     cout << "cmmdc a celor doua numere este " << CMMDC(20,32);
     
     
+    fractie2.Simplifica();
     
 
 
