@@ -9,11 +9,11 @@ class Fractie
             Fractie(int);
             Fractie(int , int );
             Fractie(const Fractie& obiect);
-            int Adunare( Fractie& obiect1, Fractie& obiect2);
-            int Scadere( Fractie& obiect1, Fractie& obiect2);
+            void Adunare( Fractie& obiect1, Fractie& obiect2);
+            void Scadere( Fractie& obiect1, Fractie& obiect2);
             int Inmultire( Fractie& obiect1, Fractie& obiect2);
             int Impartire( Fractie& obiect1, Fractie& obiect2);
-            static int CMMDC(int a, int b);
+                int CMMDC(int a, int b);
             int Simplifica();
             int reciproc();
             bool egal(const Fractie& obiect);
