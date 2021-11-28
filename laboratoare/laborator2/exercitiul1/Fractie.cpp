@@ -11,15 +11,18 @@ Fractie::Fractie():numarator(0), numitor(1)
     
 }
 
+
 Fractie::Fractie(int val_numarator): numarator(val_numarator), numitor(1)
 {
     
 }
 
+
 Fractie::Fractie(int val_numarator, int val_numitor): numarator(val_numarator), numitor(val_numitor)
 {
 
 }
+
 
 Fractie::Fractie(const Fractie& obiect)
 {
@@ -27,6 +30,8 @@ Fractie::Fractie(const Fractie& obiect)
     this->numitor = obiect.numitor;
     
 }
+
+
 void Fractie::Adunare(Fractie& obiect2)
 {
     int numitor_final;
@@ -62,7 +67,6 @@ void Fractie::Adunare(Fractie& obiect2)
 }
 
 
-
 void Fractie::Scadere(Fractie& obiect2)
 {
     int numitor_final;
@@ -95,6 +99,17 @@ void Fractie::Scadere(Fractie& obiect2)
 
 
     }
+}
+
+void Fractie::Inmultire(Fractie& obiect2)
+{
+    cout << "rezultatul inmultirii este : " << this->numarator * obiect2.numarator << "/" << this->numitor * obiect2.numitor << endl;
+}
+
+
+void Fractie::Impartire(Fractie& obiect2)
+{
+    cout << "rezultatul impartirii este : " << this->numarator * obiect2.numitor << "/" << this->numitor * obiect2.numarator << endl;
 }
 
 
