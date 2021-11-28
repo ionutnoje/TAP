@@ -1,5 +1,4 @@
 #include "Fractie.h"
-
 #include <iostream>
 
 using namespace std;
