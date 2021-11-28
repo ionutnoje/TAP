@@ -74,7 +74,7 @@ void Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
         numitor_final = obiect1.numitor;
         numarator_final = obiect1.numarator - obiect2.numarator;
 
-        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << " = " << endl;
+        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final  << endl;
         
     }
     else
@@ -90,7 +90,7 @@ void Fractie::Scadere(Fractie& obiect1,Fractie& obiect2)
         numitor_final = obiect2.numitor;
         numarator_final = obiect1.numarator - obiect2.numarator;
 
-        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << " = " << endl;
+        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << endl;
         
 
 
