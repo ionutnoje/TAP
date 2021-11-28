@@ -22,6 +22,10 @@ int main()
     
     
     fractie2.Simplifica();
+
+    fractie2.reciproc();
+
+    cout << "valoarea functiei egal este: " << fractie1.egal(fractie2) << endl;
     
 
 

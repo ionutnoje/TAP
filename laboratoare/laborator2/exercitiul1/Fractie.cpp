@@ -149,6 +149,20 @@ void Fractie::reciproc()
 }
 
 
+bool Fractie::egal(const Fractie& obiect)
+{
+    if(this->numarator == obiect.numarator)
+    {
+        if(this->numitor == obiect.numitor)
+        {
+            return true;
+        }
+        else return false;
+    }
+    return false;
+}
+
+
 
 
 
