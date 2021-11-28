@@ -37,33 +37,41 @@ void Fractie::Adunare(Fractie& obiect2)
     int numitor_final;
     int numarator_final;
 
-
-    if(this->numitor == obiect2.numitor)
+    if(this->numitor != 0)
     {
-        numitor_final = this->numitor;
-        numarator_final = this->numarator + obiect2.numarator;
+        if(this->numitor == obiect2.numitor)
+        {
+            numitor_final = this->numitor;
+            numarator_final = this->numarator + obiect2.numarator;
 
-        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
-        
+            cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
+            
+        }
+        else
+        {
+            int aux = this->numitor;
+            this->numarator = this->numarator * obiect2.numitor;
+            this->numitor = this->numitor * obiect2.numitor;
+
+            obiect2.numarator = obiect2.numarator * aux;
+            obiect2.numitor = obiect2.numitor * aux;
+
+
+            numitor_final = obiect2.numitor;
+            numarator_final = this->numarator + obiect2.numarator;
+
+            cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
+            
+
+
+        }
     }
     else
     {
-        int aux = this->numitor;
-        this->numarator = this->numarator * obiect2.numitor;
-        this->numitor = this->numitor * obiect2.numitor;
-
-        obiect2.numarator = obiect2.numarator * aux;
-        obiect2.numitor = obiect2.numitor * aux;
-
-
-        numitor_final = obiect2.numitor;
-        numarator_final = this->numarator + obiect2.numarator;
-
-        cout << "Fractia dupa adunarea este: " << numarator_final << "/" << numitor_final << endl;
-        
-
-
+        Fractie_num_0 exceptie;
+        throw exceptie;
     }
+    
 }
 
 
@@ -72,44 +80,69 @@ void Fractie::Scadere(Fractie& obiect2)
     int numitor_final;
     int numarator_final;
 
-
-    if(this->numitor == obiect2.numitor)
+    if(this->numitor != 0)
     {
-        numitor_final = this->numitor;
-        numarator_final = this->numarator - obiect2.numarator;
+        if(this->numitor == obiect2.numitor)
+        {
+            numitor_final = this->numitor;
+            numarator_final = this->numarator - obiect2.numarator;
 
-        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final  << endl;
-        
+            cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final  << endl;
+            
+        }
+        else
+        {
+            int aux = this->numitor;
+            this->numarator = this->numarator * obiect2.numitor;
+            this->numitor = this->numitor * obiect2.numitor;
+
+            obiect2.numarator = obiect2.numarator * aux;
+            obiect2.numitor = obiect2.numitor * aux;
+
+
+            numitor_final = obiect2.numitor;
+            numarator_final = this->numarator - obiect2.numarator;
+
+            cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << endl;
+            
+
+
+        }
     }
     else
     {
-        int aux = this->numitor;
-        this->numarator = this->numarator * obiect2.numitor;
-        this->numitor = this->numitor * obiect2.numitor;
-
-        obiect2.numarator = obiect2.numarator * aux;
-        obiect2.numitor = obiect2.numitor * aux;
-
-
-        numitor_final = obiect2.numitor;
-        numarator_final = this->numarator - obiect2.numarator;
-
-        cout << "Fractia dupa scadere este: " << numarator_final << "/" << numitor_final << endl;
-        
-
-
+        Fractie_num_0 exceptie;
+        throw exceptie;
     }
+
+    
 }
 
 void Fractie::Inmultire(Fractie& obiect2)
 {
-    cout << "rezultatul inmultirii este : " << this->numarator * obiect2.numarator << "/" << this->numitor * obiect2.numitor << endl;
+    if(this->numitor != 0)
+    {
+        cout << "rezultatul inmultirii este : " << this->numarator * obiect2.numarator << "/" << this->numitor * obiect2.numitor << endl;
+    }
+    else 
+    {
+        Fractie_num_0 exceptie;
+        throw exceptie;
+    }
 }
 
 
 void Fractie::Impartire(Fractie& obiect2)
 {
-    cout << "rezultatul impartirii este : " << this->numarator * obiect2.numitor << "/" << this->numitor * obiect2.numarator << endl;
+    if(this->numitor != 0)
+    {
+        cout << "rezultatul impartirii este : " << this->numarator * obiect2.numitor << "/" << this->numitor * obiect2.numarator << endl;
+    }
+    else 
+    {
+        Fractie_num_0 exceptie;
+        throw exceptie;
+    }
 }
 
 
@@ -121,27 +154,37 @@ void Fractie::print()
 
 void Fractie::Simplifica()
 {
-    int cmmdc = CMMDC(this->numarator,this->numitor);
-
-    if(this->numarator == this->numitor)
+    if(this->numitor != 0)
     {
-        cout << "rezultatul simplificarii este 1" << endl;
-    }
-    else 
-    {   
-        if(this->numarator % this->numitor == 0)
-        {
-            cout << "fractia nu se poate simplifica, iar rezultatul este: " << this->numarator/this->numitor << endl;
-        }
-        else
-        {
-            this->numarator = this->numarator/cmmdc;
-            this->numitor = this->numitor/cmmdc;
-            cout << "fractia simplificata este: " << this->numarator << "/" << this->numitor << endl;
-        
-        }
+        int cmmdc = CMMDC(this->numarator,this->numitor);
 
+        if(this->numarator == this->numitor)
+        {
+            cout << "rezultatul simplificarii este 1" << endl;
+        }
+        else 
+        {   
+            if(this->numarator % this->numitor == 0)
+            {
+                cout << "fractia nu se poate simplifica, iar rezultatul este: " << this->numarator/this->numitor << endl;
+            }
+            else
+            {
+                this->numarator = this->numarator/cmmdc;
+                this->numitor = this->numitor/cmmdc;
+                cout << "fractia simplificata este: " << this->numarator << "/" << this->numitor << endl;
+            
+            }
+
+        }
     }
+    else
+    {
+        Fractie_num_0 exceptie;
+        throw exceptie;
+    }
+
+    
 
 }
 
@@ -150,16 +193,26 @@ void Fractie::reciproc()
 {
     int aux;
 
-    cout << "\nfractia initiala este: " << this->numarator << "/" << this->numitor << endl; 
+    if(this->numitor != 0)
+    {
+        cout << "\nfractia initiala este: " << this->numarator << "/" << this->numitor << endl; 
 
 
-    aux = this->numarator;
-    this->numarator = this->numitor;
-    this->numitor = aux;
+        aux = this->numarator;
+        this->numarator = this->numitor;
+        this->numitor = aux;
 
 
-    cout << "fractia dupa inversare este: " << this->numarator << "/" << this->numitor << endl; 
+        cout << "fractia dupa inversare este: " << this->numarator << "/" << this->numitor << endl; 
 
+    }
+    else
+    {
+        Fractie_num_0 exceptie;
+        throw exceptie;
+    }
+
+    
 
 }
 

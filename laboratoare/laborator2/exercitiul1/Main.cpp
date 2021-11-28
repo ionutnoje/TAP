@@ -7,8 +7,11 @@ using namespace std;
 int main()
 {
 
-    Fractie fractie1(3,4);
+    Fractie fractie1(3,0);
     Fractie fractie2(4,3);
+
+
+
     cout << "fractie1: " << endl; 
     fractie1.print();    
     cout << "fractie2: " << endl;
@@ -27,10 +30,19 @@ int main()
 
     // cout << "valoarea functiei egal este: " << fractie1.egal(fractie2) << endl;
     
-
+    try
+    {
     fractie1.Inmultire(fractie2);
-    
+
     fractie1.Impartire(fractie2);
+    }
+    catch(Fractie::Fractie_num_0 exceptie)
+    {
+        cout << "///////////////////////////////////////////////////////////////////////////////////////" << endl;;
+        cout << "EROARE: numitorul unei fractii este 0" << endl;
+    }
+    
+    
 
 
     return 0;

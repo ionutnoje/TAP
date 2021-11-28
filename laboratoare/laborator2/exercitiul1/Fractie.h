@@ -33,6 +33,8 @@ class Fractie
             bool egal(const Fractie& obiect);
             void print();
 
+            class Fractie_num_0{};
+
 
 
 
