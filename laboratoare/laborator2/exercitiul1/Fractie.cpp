@@ -104,7 +104,7 @@ void Fractie::print()
 }
 
 
-int Fractie::CMMDC(int a, int b)
+int CMMDC(int a, int b)
 {
     while(a!=b)
     {
