@@ -33,9 +33,9 @@ void Banca::afisareBanca()
 		std::cout << clienti[i]->getNume() << " " << clienti[i]->getPrenume() << " " << clienti[i]->getAdresa() << std::endl;
 
 		for (int j = 0; j < this->clienti[i]->getContorConturi(); j++) {
-			std::cout << clienti[i]->conturi[j]->nrcont << " "
-				<< clienti[i]->conturi[j]->moneda << " "
-				<< clienti[i]->conturi[j]->suma << std::endl;
+			std::cout << clienti[i]->conturi[j]->getNrCont() << " "
+				<< clienti[i]->conturi[j]->getMoneda() << " "
+				<< clienti[i]->conturi[j]->getSuma() << std::endl;
 		}
 
 		std::cout << std::endl;
