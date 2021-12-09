@@ -7,10 +7,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     ui->setupUi(this);
     ui->radioButtonC->setChecked(true);
      ui->radioButtonF->setChecked(false);
-    connect(this->ui->pushButtonConvert,//comp. care declanseaza evenimentul
-            SIGNAL(clicked(bool)), //event cu un anumit nume
-            this, //listener fereastra
-            SLOT(apasarepebuton()) //orice denumire de metoda tip slot
+    connect(this->ui->pushButtonConvert,
+            SIGNAL(clicked(bool)),
+            this,
+            SLOT(apasarepebuton())
             );
 
 }
@@ -19,17 +19,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-//tipRetur numeClasa::numeMetoda(param)
 void MainWindow::apasarepebuton()
 {
-    //de verif. in lineEdit apare numeric (intreg sau float)
-    //de verif. RadioButton este selectat
-    //se verif. F din F->C rezultat in C
-    //atfel C selectat: C->F rezultat in F
+
     float input,result;
     QString inputstr=ui->lineEdit_input->text();
     bool ok;
-    input=inputstr.toFloat(&ok); //ok se pune true, in input avem val. numerica corecta / ok se pune false
+    input=inputstr.toFloat(&ok);
     if(!ok)
         QMessageBox::critical(this,"Eroare","In textbox se trece int sau float",QMessageBox::Ok|QMessageBox::Cancel);
     else //ok==true
@@ -40,7 +36,8 @@ void MainWindow::apasarepebuton()
 
       }
       else if(!ui->radioButtonC->isChecked() && ui->radioButtonF->isChecked())  {
-       //de completat tema
+          result=(input*9/5.0)+32;
+          ui->label_rezultat->setText("Rezultat: "+QString::number(result));
       }
       else {
           QMessageBox::critical(this,"Eroare","Selectati un RB",QMessageBox::Ok|QMessageBox::Cancel);

@@ -1,0 +1,157 @@
+SUPRASRIEREA OPERATORILOR
+
+1.operator = (atribuirea)
+    T& T::operator= (const T& param)
+    //const T& param - const fixeaza campurile parametrului ,T& se pune referinta ca sa ne referim la obiectul creat in main 
+    //T& este tipul de retur
+    {
+        se pun instructiuni identice cu cele in copy constructor
+
+        return *this;//revine cu obiectul curent ref la obiectul curent
+    }
+
+    int main()
+    {
+        Fractie a(1,2);
+        Fractie b;
+        b = a;//b.operator=(a);
+
+    }
+
+
+
+Operatori compusi: 
+    -T& T::operator+= (const T& param)
+    -T& T::operator-= (const T& param)
+    -T& T::operator*= (const T& param)
+    -T& T::operator/= (const T& param)
+
+    ex: T& T::operator+= (const T& param){
+        *this = *this + param;//pp.operator+
+        return *this;//valoarea pointerului this
+    }
+
+
+1.Operatori aritmetici:
+    -variante membre:   -T T::operator+(const T&)const;
+                        -T T::operator-(const T&)const;
+                        -T T::operator*(const T&)const;
+                        -T T::operator/(const T&)const;
+
+    -variante prietene: -friend T operator+(const T&, const T&);//frind nu e const,nu are legatura cu this
+                        -friend T operator-(const T&, const T&);
+                        -friend T operator*(const T&, const T&);
+                        -friend T operator/(const T&, const T&);
+
+
+1.1Operator - de schimbare de semn
+    -exista numai varianta member function
+        -T T::operator-()
+        Fractie Fractie::operator-()const
+        {
+            Fractie rez = *this;
+            rez.numarator *= -1;
+            return rez;
+        }
+
+
+orice clasa trebuie sa aiba constructor cu lista de initializare,constructor de copiere,operator =(de atribuire),si destructor 
+
+
+
+
+4.Post/Pre ++,--
+
+    -variante friend nu exista
+
+    preincrementare ++obiect: T& operator++()//prima varianta//
+
+    postincrementare obiect++: T operator++(int dummy)//varianta 2
+
+
+    Preincrementare:
+        T& operator++()
+        {
+            //se incrementeaza *this
+            return *this;
+        }
+
+
+    Postincrementarea:
+        T operator++(int a)
+        {
+            T obiectinItial = *this;
+            //se incrementeaza *this
+            return obiectVechi;
+        }
+
+
+
+
+
+5.OPERATORI RELATIONALI:
+    -identici cu operator aritmetici,inafara de tipul de retur
+    bool T::operator<(const T&)const;
+    bool T::operator<=(const T&)const;
+    bool T::operator>(const T&)const;
+    bool T::operator>=(const T&)const;
+    bool T::operator==(const T&)const;
+    bool T::operator!=(const T&)const;
+
+
+
+    varaintele friend:
+        friend bool operator<(const T&, const T&);
+        friend bool operator<=(const T&, const T&);
+        friend bool operator>(const T&, const T&);
+        friend bool operator>=(const T&, const T&);
+        friend bool operator==(const T&, const T&);
+        friend bool operator!=(const T&, const T&);
+
+
+
+6.OPERATORI DE CITIRE/AFISARE 
+
+    se include :#include <fstream>
+
+    varianta membra: 
+        ostream& T::operator<<(ostream& os)
+        {
+            os << this->proprietate1;.....
+            return os;
+        }
+
+        apel in main: obiect.operator<<(cout);
+
+
+
+    varianta friend:
+        friend ostream& operator<<(ostream& os,const T& obiect)
+        {
+            os << obiect.proprietate1;...
+            return os;
+        }    
+
+        apel in main: cout << f;
+
+
+
+
+
+    varianta membra:
+
+    istream& T::operator>>(istream& is)
+    {
+        is >> this->proprietate1;....
+        return is;
+    }    
+
+    apel in main: obiect.operator>>(cin);
+
+
+    varianta friend: 
+        friend istream& operator>>(istream& is, T& obiect)
+        {
+            is >> p.camp1>>....;
+            return is;
+        }

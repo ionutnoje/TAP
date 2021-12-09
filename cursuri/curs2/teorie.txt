@@ -112,11 +112,284 @@ fgjhb
 
 
 
+continuare curs 2 din data de 06.12.2021
+
+C02 alocarea obiectelor
+
+int main()
+{
+    Persoana p("A","B",20);//alocare statica;
+    p.metoda();
+
+    Persoana* pers = new Persoana("D","E",21);
+    Persoana* = pointer de tipul clasei
+    new = alocare de memorei dinamica
+    Persoana("D","E",21) = constructor
+
+    pers->metoda();
+
+    cand terminam de folosit pers trebuie dealocata memoria cu: delete pers
+
+}
+
+
+
+
+ALOCAREA DINAMICA:
+
+Tablouri unidimensionale:
+
+int t[100]; alocare statica;
+
+la obiecte: Persoana tp[100];   se aloca un tablou de persoane,iar fiecare casuta din vector este un obiect de tip persoana
+
+            constructor fara param
+
+
+
+pentru int:
+int *t = new int[n];
+
+
+tablou de obiecte:
+    pentru obiecte se pune o * in plus:
+        Persoana ** v = new Persoana *[n];
+        for(int i = 0; i < n; i++)
+        {   
+            string nume,prenume; 
+            int varsta;
+            cin>>nume>>prenume>>varsta;
+            v[i] = new Persoana(nume,prenume,varsta);
+        }
 
 
 
 
 
+
+
+alocare dinamica tablou bidimensional:
+    alocarea obiectelor de tip intreg:
+        int ** a = new int *[n];
+        for(int i = 0; i < n; i++)
+        {
+            a[i] = new int[m];
+        }
+
+    alocare obiecte de tip persoana:
+        Persoana *** pers = new Persoana **[n];
+        for(int i = 0; i < n; i++)
+        {
+            apers[i] = new Persoana*[m];
+            for(j = 0; j < m; ++j)
+            {
+                string nume,prenume;
+                int varsta;
+                cin>>nume>>prenume>>varsta;
+                apers[i][j] = new Persoana(nume,prenume,varsta);
+            }
+        }    
+
+
+
+
+
+MODIFICATORI DE ACCES:
+
+    public: camp+metoda(pot sa fie apelate sau accesate de oriunde)
+    private:doar din clasa proprie
+    protected:din clasa proprie/sau din clasele care o sa o mosteneasca
+
+    calss A//se pune implicit pe private
+    {
+
+    };
+
+    
+    struct A{
+        //este o clasa in care si metodele si variabilele sun publice implicit
+
+    };
+
+
+    Fiecare clasa are 4 metode: Constructor,copy-constructor,destructor,T& operator = (const T&)
+        1.Constructor: daca programatorul nu trece niciun constructor se genereaza automat constructorul implicit
+                class Persoana
+                {
+                    string n,p;
+                    int v;
+
+                    public: 
+                        Persoana();//constructor fara parametru,cel scris de programatorul
+
+                        Persoana(string n= "",string p = "", int v = 0);//o sa dea eroare pentru ca variabilele nu sunt initializate
+                        Persoana(string n, string p);
+                }
+
+
+
+
+
+
+Singleton:
+
+    -nu se implementeaza constructtor in cpp
+    -statici un singur obiect de tip pointer
+    
+
+
+    class MySingleton
+    {
+        private:
+            MySingleton();
+            MySingleton(const MySingleton&);
+            MySingleton& operator = (const MySingleton&);
+            ~MySingleton();
+
+            static MySingleton* theOnlyInstance;
+
+        public:
+            static MySingleton* getInstance();
+    }
+
+
+
+
+C04://////////////////////////////////////////////////////////
+    operator = ->prin atribuire se copiaza un obiect intr-un alt obiect in acelasi tip
+
+    .h 
+    A(const A&);
+    A& operator=(const A& param);
+
+    .cpp
+    A:A(const A& altobiect)
+    {
+        this->camp1 - altobiect.camp1;
+    }
+
+    A& A::operator = (const A& param)
+    {
+        this->camp1 = altobiect.camp1;
+        ...
+        return *this; // referinta la this(*adr)
+    }
+
+    int main()
+    {
+        A a();
+        A b;
+        b = a;//operator = 
+    }
+
+
+
+
+
+-this pointer atre obiectul curent
+    calass A{
+        A();
+        A(int x);
+
+    };
+
+
+
+
+-inline: in cazul in care functia este simpla de cateva randuri
+    ex: getter,setter,implementarea poate ramane in fisierul .hpp
+
+
+
+
+
+
+
+
+
+FUNCTII CONSTANTE: 
+    -se pune const atat in fisierul .h cat si in .cpp
+    -duma numele metodei si ( ) se pune const
+    -se pune const dupa metoda daca ea nu schimba obiectul curent 
+    -orice metoda de afisare poate sa fie const,si si getterele
+
+
+    void persoana::getNume(string n)
+    {
+        this->nume
+    }
+
+
+
+CUVANTUL CHEIE FRIEND:
+    metoda friend cu o clasa
+    clasa friend cu o clasa
+
+    class A{
+        frined class B;//clasa b este friend cu a
+                        //are acces la toate campurile private si protected
+    };
+
+    class B{
+
+    }
+
+    ex:
+
+    class Nod
+    {
+        int info;
+        Nod* succ;
+
+        public:
+            Nod();
+            Nod(const Nod&);
+            Nod& operator = (const Nod&);
+            priend  class LSI;
+    };
+    class LSI
+    {
+        Nod* ROOT;
+        public:
+            LSI();
+            friend int main();
+    };
+
+
+OBS: -o funstie prietena nu face parte din clasa.Nu este member function
+     
+
+FORWARD DECLARATION:
+    -se declara clasele inainte de implementarea lor:   
+            class A();
+            class B();
+
+REFERIRE INCRUCISATA:
+    -    
+
+
+METODE DE INSTANTA:
+    -member function:
+    -au acces la membri privati din acea clasa
+    -sunt componentele clasei respective
+    -poate sa fie apelata printr o instanta a clasei
+    
+    
+    -static member function:-acces la private
+                            -sunt componentele clasei
+                            -clasa.metoda();
+                            -instanta optionala
+
+
+    -metoda friend: friend function:-acces doar la membri privati
+                                    -nu are acces la this
+
+
+OBSERVATIE: 
+        -Fractie add(const Fractie& p)
+        {
+            
+        }
 
 
 

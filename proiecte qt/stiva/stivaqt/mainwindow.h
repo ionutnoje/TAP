@@ -19,8 +19,9 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void apasarePush();
-    void apasarePop();
+    void apasareBtnPush();
+    void apasareBtnPop();
+
 public slots:
 };
 #endif // MAINWINDOW_H

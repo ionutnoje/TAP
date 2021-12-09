@@ -10,12 +10,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(this->ui->btnPush,
             SIGNAL(clicked(bool)),
             this,
-            SLOT(apasarePush())
+            SLOT(apasareBtnPush())
             );
     connect(this->ui->btnPop,
             SIGNAL(clicked(bool)),
             this,
-            SLOT(apasarePop())
+            SLOT(apasareBtnPop())
             );
 }
 
@@ -24,25 +24,25 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::apasarePush()
+void MainWindow::apasareBtnPush()
 {
     float input;
     QString inputstr=ui->lineEdit_valori->text();
     bool ok;
-    input=inputstr.toFloat(&ok); //ok se pune true, in input avem val. numerica corecta / ok se pune false
+    input=inputstr.toFloat(&ok);
     if(!ok)
-        QMessageBox::critical(this,"Eroare","In textbox se trece int sau float",QMessageBox::Ok|QMessageBox::Cancel);
+        QMessageBox::critical(this,"Eroare","introduceti int sau float",QMessageBox::Ok|QMessageBox::Cancel);
     else //ok==true
     {
       ui->listWidget->insertItem(0,QString::number(input));
     }
 }
 
-void MainWindow::apasarePop()
+void MainWindow::apasareBtnPop()
 {
     if(ui->listWidget->count() == 0)
     {
-        QMessageBox::information(this,"Eroare","Stiva este goala.",QMessageBox::Ok);
+        QMessageBox::information(this,"Eroare","nu sunt elemente in stiva.",QMessageBox::Ok);
     }
     else
     {

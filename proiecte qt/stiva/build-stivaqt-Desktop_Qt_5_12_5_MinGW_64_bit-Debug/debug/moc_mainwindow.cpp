@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[4];
-    char stringdata0[35];
+    char stringdata0[41];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,12 +32,12 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 11), // "apasarePush"
-QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 10) // "apasarePop"
+QT_MOC_LITERAL(1, 11, 14), // "apasareBtnPush"
+QT_MOC_LITERAL(2, 26, 0), // ""
+QT_MOC_LITERAL(3, 27, 13) // "apasareBtnPop"
 
     },
-    "MainWindow\0apasarePush\0\0apasarePop"
+    "MainWindow\0apasareBtnPush\0\0apasareBtnPop"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,8 +71,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->apasarePush(); break;
-        case 1: _t->apasarePop(); break;
+        case 0: _t->apasareBtnPush(); break;
+        case 1: _t->apasareBtnPop(); break;
         default: ;
         }
     }
