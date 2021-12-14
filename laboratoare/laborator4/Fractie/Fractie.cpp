@@ -89,12 +89,21 @@ int cmmdc(int a, int b)
 // }
 
 
-Fractie& Fractie::operator*=(const Fractie& fr){
+Fractie& Fractie::operator*=(const Fractie& fr) {
     this->numarator = this->numarator * fr.numarator;
     this->numitor = this->numitor * fr.numitor;
 
     return *this;
 }
+
+
+// Fractie& Fractie::operator/=(const Fractie& fr)
+// {
+//     this->numarator = this->numarator * fr.numitor;
+//     this->numitor = this->numitor * fr.numarator;
+
+//     return *this;
+// }
 
 
 Fractie& Fractie::operator--()//predecrementare
@@ -120,73 +129,73 @@ Fractie& Fractie::operator=(const Fractie& fr)
 }
 
 
-bool Fractie::operator==(const Fractie& fr) const
-{
-    Fractie f1 = this->simplifica();
-    Fractie f2 = fr.simplifica();
+// bool Fractie::operator==(const Fractie& fr) const
+// {
+//     Fractie f1 = this->simplifica();
+//     Fractie f2 = fr.simplifica();
 
-    if(f1.numarator == f2.numarator && f1.numitor == f2.numitor)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+//     if(f1.numarator == f2.numarator && f1.numitor == f2.numitor)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
 
-}
-
-
-bool Fractie::operator<(const Fractie& fr) const
-{
-    if(this->numarator * fr.numitor < this->numitor * fr.numarator)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// }
 
 
-bool Fractie::operator>(const Fractie& fr) const
-{
-    if(this->numarator * fr.numitor > this->numitor * fr.numarator)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// bool Fractie::operator<(const Fractie& fr) const
+// {
+//     if(this->numarator * fr.numitor < this->numitor * fr.numarator)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
 
 
-bool Fractie::operator>=(const Fractie& fr) const
-{
-    if(this->numarator * fr.numitor >= this->numitor * fr.numarator)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// bool Fractie::operator>(const Fractie& fr) const
+// {
+//     if(this->numarator * fr.numitor > this->numitor * fr.numarator)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
 
 
-bool Fractie::operator<=(const Fractie& fr) const
-{
-    if(this->numarator * fr.numitor <= this->numitor * fr.numarator)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// bool Fractie::operator>=(const Fractie& fr) const
+// {
+//     if(this->numarator * fr.numitor >= this->numitor * fr.numarator)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
+
+
+// bool Fractie::operator<=(const Fractie& fr) const
+// {
+//     if(this->numarator * fr.numitor <= this->numitor * fr.numarator)
+//     {
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
 
 
 
@@ -332,4 +341,41 @@ bool operator==(const Fractie& fr1, const Fractie& fr2)
     {
         return false;
     }
+}
+
+// Fractie operator*=(const Fractie& f1,const Fractie& f2)
+// {
+//     Fractie rez;
+
+//     rez.numarator = f1.numarator * f2.numarator;
+//     rez.numitor = f1.numitor * f2.numitor;
+
+//     return rez;
+
+// }
+
+Fractie operator/=(const Fractie& f1, const Fractie& f2)
+{
+    Fractie rez; 
+    rez.numarator = f1.numarator * f2.numitor;
+    rez.numitor = f1.numitor * f2.numarator;
+
+    return rez;
+}
+
+
+ostream& operator<<(ostream& os, const Fractie& fr)
+{
+    os<<fr.numarator<<"/"<<fr.numitor;
+    return os;
+}
+
+
+istream& operator>>(istream& is, Fractie& fr)
+{
+    cout << "introduceti numaratorul: " << endl;
+    is >> fr.numarator;
+    cout << "introduceti numitorul: " << endl;
+    is >> fr.numitor;
+    return is;
 }

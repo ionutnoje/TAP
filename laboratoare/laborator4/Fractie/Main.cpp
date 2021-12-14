@@ -34,7 +34,7 @@ int main(){
 
     cout << endl;
     f1*=f2;
-    cout << "f1 = " ;
+    cout << "f1*=f2 = " ;
     f1.afisare();
     
 
@@ -70,6 +70,18 @@ int main(){
     f1.reciproc();
     f1.afisare();
     cout << endl;
+
+    Fractie fractie_noua;
+    cout << "introductei datele pentru o fractie noua: " << endl;
+    cin >> fractie_noua;
+    cout << "fractia noua este: " << fractie_noua << endl;
+
+
+    cout << "f1 = " << f1 << endl;
+    cout << "fractie_noua/=f1: " << endl;
+    fractie_noua /= f1;
+    cout << fractie_noua;
+    
 
 
 
