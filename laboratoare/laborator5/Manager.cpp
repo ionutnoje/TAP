@@ -12,26 +12,52 @@ double Manager::getSalar()
     return (this->getSalar());
 }
 
+Manager::~Manager()
+{
+    nrsubordonati = 0;
+}
 
 Manager::Manager(const Manager& obj) :Angajat(obj)
 {
     //Angajat(obj); // nu se apeleaza separat pe linie noua constructorul de copiere al clasei de baza
         //ci direct dupa
+        nrsubordonati = obj.nrsubordonati;
 
-}/*
+}
 
 Manager& Manager::operator=(const Manager& param)
 {
-    operator(param);
-    this->nrsubordonati = param.nrsubordonati;
+    
 
     return *this;
 }
 
 
 
-istream& operator>>(istream& is, Angajat& param)
+istream& operator>>(istream& is, Manager& param)
 {
-    operator>>(is, (Angajat)param);
+    cout << "introduceti val nrore: " << endl;
+    is >> param.nrore;
+    cout << "introduceti tariful orar: " << endl;
+    is >> param.tariforar;
+    cout << "introduceti nr de angajati: " << endl;
+    is >> param.nrsubordonati;
+
     return is;
-}*/
+}
+
+ostream& operator<<(ostream& os, Manager& param)
+{
+
+    operator<<(os,(Angajat)param);
+
+    cout << "\nnr subordonati: " << param.getNrSubordonati();
+    
+
+    return os;
+}
+
+int Manager::getNrSubordonati()
+{
+    return this->nrsubordonati;
+}
