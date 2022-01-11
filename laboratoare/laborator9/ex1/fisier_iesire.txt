@@ -1,0 +1,5 @@
+_________________________________
+|algoritmii sunt functii generice,|
+|care se refera la containere     |
+|print intermediul iteratorilor   |
+_________________________________
