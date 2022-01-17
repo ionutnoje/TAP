@@ -1,0 +1,60 @@
+pentru operatorii +,-,*,/: 
+                Fractie operator-() const; metoda de clasa
+                friend Fractie operator-(const Fractie&, const Fractie&);//returneaza un alt obiect reprezentand diferenta a cei doi param: param1-param2
+
+                returnam un obiect de tip Fractie ex:(Fractie rez....return rez)
+
+
+pentru operatorii ++,--:
+                Fractie& operator--() const; // predecrementare
+                    pentru varianta cu referinta o sa returnam *this, catre obiectul curent
+                
+                Fractie operator--(int a);  //postdecrementare
+                    returnam un obiect de tip Fractie, obiectul de tip fractie o sa primeasca val *this
+
+
+
+pentru operatorii +=,-=,*=,/=,=
+                Fractie& operator+=(const Fractie&);
+                returnam *this;
+
+
+
+pentru operatorii <=,>=,!=,==,<,>:
+                bool operator<=(const Fractie&) const;
+                return true sau false
+
+
+                friend bool operator<=(const Fractie&, const Fractie&);
+                return true sau false
+
+
+
+pentru cin si cout:
+                pentru <<:
+                    friend ostream& operator<<(ostream& os, const Fractie& fr);
+                    return os;
+
+	                ostream& Fractie::operator<<(ostream& os) const;
+                    return os;
+
+                pentru >>:
+                    istream& Fractie::operator>>(istream& is) const;
+                    return is;
+
+	                friend istream& operator>>(istream& is , Fractie& fr);
+                    return is;
+
+
+
+cand facem operatii pe obiectul curent(-=,+=,etc)
+    o sa avem Fractie& Fractie::operator+=(const Fractie& fr)
+                {
+                    return *this;
+                }
+
+cand facem operatii pe obiectul curent(++,--,etc)
+    o sa avem Fractie& Fractie::operator+=()
+                {
+                    return *this;
+                }
