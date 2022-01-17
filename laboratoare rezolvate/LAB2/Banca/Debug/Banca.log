@@ -1,0 +1,3 @@
+﻿  ContBancar.cpp
+D:\TAP\LAB2\Banca\ContBancar.cpp(41): warning C4715: 'ContBancar::getDobanda': not all control paths return a value
+  Banca.vcxproj -> D:\TAP\LAB2\Banca\Debug\Banca.exe

@@ -1,0 +1,1 @@
+#include "Triunghi.h"

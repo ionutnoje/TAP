@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Animal.h"
 
-class Mamifer : public Animal
+class Mamifer : public virtual Animal
 {
 protected:
 	double lungime;	

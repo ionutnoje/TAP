@@ -1,0 +1,7 @@
+ 1
+aaa 4
+bbb 6
+ccc 3
+x 1
+y 1
+z 1

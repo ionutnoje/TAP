@@ -1,0 +1,6 @@
+﻿  Punct.cpp
+  Source.cpp
+D:\TAP\Lab3\problema1\Source.cpp(11,21): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\TAP\Lab3\problema1\Source.cpp(13,21): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  problema1.vcxproj -> D:\TAP\Lab3\problema1\Debug\problema1.exe

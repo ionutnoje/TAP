@@ -2,10 +2,23 @@
 #define MYOBJECT_H
 
 
-class myobject
+#include <QObject>
+#include <QDebug>
+#include <QThread>
+
+class MyObject : public QObject
 {
+    Q_OBJECT
 public:
-    myobject();
+    explicit MyObject(QObject *parent = 0);
+    void DoSetup(QThread &cThread);
+
+signals:
+
+public slots:
+    void DoWork();
+
 };
+
 
 #endif // MYOBJECT_H

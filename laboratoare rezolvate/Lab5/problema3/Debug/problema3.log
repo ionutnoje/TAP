@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\TAP\Lab5\problema3\Source.cpp(33,40): warning C4101: 'ex': unreferenced local variable
+  problema3.vcxproj -> D:\TAP\Lab5\problema3\Debug\problema3.exe

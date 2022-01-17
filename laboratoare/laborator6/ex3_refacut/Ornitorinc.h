@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Ornitorinc : public Mamifer, public Pasare
+class Ornitorinc : public virtual Mamifer, public virtual Pasare
 {
 protected:
 	Ornitorinc(string specie = "", int varsta = 0, double lungime = 0, int nrPene = 0);

@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtCore>
+#include <QtGui>
+#include <QLabel>
+#include <QProgressBar>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +20,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_actionDo_something_triggered();
+
+
 private:
     Ui::MainWindow *ui;
+    QLabel *Statlabel;
+    QProgressBar *StatProgress;
 };
 #endif // MAINWINDOW_H

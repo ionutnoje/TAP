@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Animal.h"
 
-class Pasare : public Animal
+class Pasare : public virtual Animal
 {
 protected:
 	int nrPene;

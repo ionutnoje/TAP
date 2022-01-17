@@ -1,0 +1,8 @@
+﻿  Laptop.cpp
+D:\TAP\Lab6\problema4\Monitor.h(18,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\TAP\Lab6\problema4\Tastatura.h(18,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Source.cpp
+D:\TAP\Lab6\problema4\Monitor.h(18,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\TAP\Lab6\problema4\Tastatura.h(18,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  problema4.vcxproj -> D:\TAP\Lab6\problema4\Debug\problema4.exe

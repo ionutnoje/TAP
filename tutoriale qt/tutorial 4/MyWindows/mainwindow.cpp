@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setCentralWidget(ui->plainTextEdit);
 }
 
 MainWindow::~MainWindow()
@@ -13,3 +14,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_actionNew_Window_triggered()
+{
+    mDialog = new MyDialog(this);
+    mDialog->show();
+}

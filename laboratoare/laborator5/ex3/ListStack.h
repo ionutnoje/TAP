@@ -9,7 +9,6 @@ using namespace std;
 class ListStack :public Stack
 {
 
-
 public:
 	class Nod
 	{
