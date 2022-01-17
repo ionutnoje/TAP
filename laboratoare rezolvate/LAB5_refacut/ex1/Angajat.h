@@ -1,25 +1,22 @@
 #pragma once
 #ifndef _ANGAJAT_
 #define _ANGAJAT_
-
-class Angajat{
-
-private:
-    double tarifOrar = 5.5;
-    int nrOre;
-
+#include <iostream>
+using namespace std;
+class Angajat
+{
+protected:
+	double tarifOrar;
+	int nrOre;
 public:
-    double getSalar();
-    double getTarifOrar();
-
-    Angajat(double tarifOrar = 5.5, int nrOre = 0);
-    Angajat(const Angajat& ang);
-    ~Angajat();
-    Angajat& operator=(const Angajat& angajat);
-
-    ostream& perator<<(ostream&);
-    istream& operator>>(istream&);
-
+	Angajat(int nrOre=0, double tarifOrar = 5.5);
+	Angajat(const Angajat& param);
+	~Angajat();
+	Angajat& operator=(const Angajat&);
+	virtual double getSalar();
+	double getTarifOrar();
+	friend ostream& operator<<(ostream&, const Angajat&);
+	istream& operator>>(istream&);
 };
-
 #endif
+

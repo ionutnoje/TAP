@@ -13,76 +13,89 @@ public:
     Fractie(const Fractie& frac);
     ~Fractie();
 
-    //-
-    Fractie operator-() const;
+    // +
+        //clasa
+        Fractie operator+(const Fractie& )const;
 
-    friend Fractie operator-(const Fractie&, const Fractie&);//returneaza un alt obiect reprezentand diferenta a cei doi param: param1-param2
+        //friend
+        friend Fractie operator+(const Fractie& f1, const Fractie& f2);
 
-    //+
-    Fractie operator+() const;
+    // -
+        Fractie operator-(const Fractie&) const;
+        friend Fractie operator-(const Fractie& , const Fractie&);
 
-    friend Fractie operator+(const Fractie&, const Fractie&);
-
-
-    //--
-    Fractie& operator--() const;   // --fractie; predecrementare  scadem din obiectul curent -1
-
-    Fractie operator--(int a); // fractie--; postdecrementare
-
-    //++
-
-    Fractie& operator++() const; // ++fractie
-    Fractie operator++(int a); //fractie++
-
-    //*
-
-    Fractie operator*() const;
-
-    friend Fractie operator*(const Fractie&, const Fractie&);
+    // *
+        Fractie operator*(const Fractie&)const;
+        friend Fractie operator*(const Fractie&, const Fractie&);
 
     // /
+        Fractie operator/(const Fractie&)const;
+        friend Fractie operator/(const Fractie&, const Fractie&);
 
-    Fractie operator/() const;
-
-    friend Fractie operator/(const Fractie&, const Fractie&);
+    
 
     // +=
-    Fractie& operator+=(const Fractie&);
+        Fractie& operator+=(const Fractie&);
 
-    //-= 
-    Fractie& operator-=(const Fractie&);
-
-    // /=
-    Fractie& operator/=(const Fractie&);
+    // -=
+        Fractie& operator-=(const Fractie&);
 
     // *= 
-    Fractie& operator*=(const Fractie&);
+        Fractie& operator*=(const Fractie&);
+    
+    // /=
+        Fractie& operator/=(const Fractie&);
 
+    
+
+    // --
+        Fractie& operator--();
+        Fractie operator--(int a);
+
+    // ++
+        Fractie& operator++();
+        Fractie operator++(int a);
 
     // =
-    Fractie& operator=(const Fractie&);
+        Fractie& operator=(const Fractie&);
 
+    // ==
+        bool operator==(const Fractie&) const;
+    	//friend bool operator==(const Fractie&, const Fractie&);
 
-    bool operator==(const Fractie&) const;//comparam obiectul curent cu parametrul dat
-	//bool operator<(const Fractie&) const;
-	bool operator<=(const Fractie&) const;
-	bool operator>(const Fractie&) const;
-	bool operator>=(const Fractie&) const;
-	bool operator!=(const Fractie&) const;
-	friend bool operator<(const Fractie&, const Fractie&);//comparam cei doi parametri
-	//friend bool operator<=(const Fractie&, const Fractie&);
-	//friend bool operator>(const Fractie&, const Fractie&);
-	//friend bool operator>=(const Fractie&, const Fractie&);
-	//friend bool operator==(const Fractie&, const Fractie&);
-	//friend bool operator!=(const Fractie&, const Fractie&);
-	
+    // <= 
+        bool operator<=(const Fractie&) const;
+    	//friend bool operator<=(const Fractie&, const Fractie&);
 
-    friend ostream& operator<<(ostream&, const Fractie&);
-	//ostream& Fractie::operator<<(ostream&) const;
-	//istream& Fractie::operator>>(istream&) const;
-	friend istream& operator>>(istream&, Fractie&);
-	void afisare() const;//va fi inlocuit cu supraincarcarea operatorului <<
+    // >=
+        bool operator>=(const Fractie&) const;
+    	//friend bool operator>=(const Fractie&, const Fractie&);
 
+    // != 
+        bool operator!=(const Fractie&) const;
+	    //friend bool operator!=(const Fractie&, const Fractie&);
+
+    // <
+        bool operator<(const Fractie&) const;
+	    //friend bool operator<(const Fractie&, const Fractie&);//comparam cei doi parametri
+
+    // >
+        bool operator>(const Fractie&) const;
+        friend bool operator>(const Fractie&, const Fractie&);
+
+    // <<   
+        //clasa
+        ostream& Fractie::operator<<(ostream&) const;
+        
+        //friend
+        //friend ostream& operator<<(ostream&, const Fractie&);
+
+    // >>
+        //clasa
+        istream& Fractie::operator>>(istream&) const;
+
+        //friend
+        //istream& Fractie::operator>>(istream&, Fractie&);
 
 
 };
